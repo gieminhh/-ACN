@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; padding: 20px; }
+        .container { max-width: 1400px; margin: auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #2c3e50; margin-bottom: 25px; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th { background: #34495e; color: white; padding: 10px; border: 1px solid #2c3e50; font-size: 13px; }
+        td { padding: 12px; border: 1px solid #ecf0f1; text-align: center; position: relative; }
+        
+        .map-trigger { color: #3498db; font-weight: bold; cursor: help; border-bottom: 1px dotted #3498db; }
+        .data-tooltip { 
+            display: none; position: absolute; background: #2c3e50; color: white; 
+            padding: 15px; border-radius: 8px; width: 320px; z-index: 1000;
+            left: 50px; top: 0; text-align: left; font-size: 11px; font-family: monospace;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); line-height: 1.4;
+        }
+        .map-trigger:hover .data-tooltip { display: block; }
+        
+        .best { background: #e8f5e9; color: #2e7d32; font-weight: bold; border: 2px solid #4caf50 !important; }
+        .sub-head { background: #edf2f7; color: #4a5568; font-weight: bold; font-size: 11px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📊 SO SÁNH HIỆU NĂNG THỰC NGHIỆM CVRP</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Bản đồ</th>
+                    <th colspan="2">1. Đề tài (PPO + Beam)</th>
+                    <th colspan="2">2. Bài báo (Sampling)</th>
+                    <th colspan="2">3. Phương pháp cũ (Greedy)</th>
+                </tr>
+                <tr class="sub-head">
+                    <td>Cost (km)</td><td>Time (s)</td>
+                    <td>Cost (km)</td><td>Time (s)</td>
+                    <td>Cost (km)</td><td>Time (s)</td>
+                </tr>
+            </thead>
+            <tbody>
+
+        <tr>
+            <td>
+                <div class="map-trigger">
+                    MAP_01
+                    <div class="data-tooltip">
+                        <b>📍 DEPOT:</b> (0.45, 0.20)<br><hr>
+                        <b>👥 CUSTOMERS:</b><br>K1:(0.92,0.35) D:0.2<br>K2:(0.15,0.09) D:0.1<br>K3:(0.59,0.07) D:0.2<br>K4:(0.75,0.63) D:0.2<br>K5:(0.94,0.13) D:0.1<br>K6:(0.52,0.53) D:0.0<br>K7:(0.54,0.71) D:0.1<br>K8:(0.43,0.28) D:0.3<br>K9:(0.84,0.16) D:0.2<br>K10:(0.11,0.73) D:0.2<br>K11:(0.32,0.89) D:0.1<br>K12:(0.13,0.84) D:0.3<br>K13:(0.56,0.41) D:0.2<br>K14:(0.86,0.28) D:0.2<br>K15:(0.58,0.33) D:0.1<br>K16:(0.68,0.70) D:0.1<br>K17:(0.92,0.23) D:0.1<br>K18:(0.63,0.46) D:0.0<br>K19:(0.87,0.17) D:0.1<br>K20:(0.33,0.87) D:0.3
+                    </div>
+                </div>
+            </td>
+            <td class="best">6.9127</td>
+            <td>0.2614</td>
+            <td>12.0038</td>
+            <td>0.0312</td>
+            <td>13.4443</td>
+            <td>0.0236</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <div class="map-trigger">
+                    MAP_02
+                    <div class="data-tooltip">
+                        <b>📍 DEPOT:</b> (0.72, 0.73)<br><hr>
+                        <b>👥 CUSTOMERS:</b><br>K1:(0.83,0.13) D:0.2<br>K2:(0.63,0.73) D:0.0<br>K3:(0.29,0.21) D:0.1<br>K4:(0.98,0.87) D:0.0<br>K5:(0.97,0.78) D:0.2<br>K6:(0.81,0.06) D:0.1<br>K7:(0.72,0.34) D:0.1<br>K8:(0.54,0.71) D:0.2<br>K9:(0.80,0.28) D:0.1<br>K10:(0.89,0.67) D:0.3<br>K11:(0.90,0.45) D:0.3<br>K12:(0.48,0.35) D:0.0<br>K13:(0.05,0.75) D:0.0<br>K14:(0.78,0.43) D:0.3<br>K15:(0.11,0.84) D:0.1<br>K16:(0.50,0.36) D:0.2<br>K17:(0.75,0.09) D:0.2<br>K18:(0.48,0.49) D:0.2<br>K19:(0.74,0.39) D:0.1<br>K20:(0.03,0.77) D:0.2
+                    </div>
+                </div>
+            </td>
+            <td class="best">7.3900</td>
+            <td>0.0964</td>
+            <td>13.3648</td>
+            <td>0.0275</td>
+            <td>14.9685</td>
+            <td>0.0263</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <div class="map-trigger">
+                    MAP_03
+                    <div class="data-tooltip">
+                        <b>📍 DEPOT:</b> (0.19, 0.96)<br><hr>
+                        <b>👥 CUSTOMERS:</b><br>K1:(0.68,0.90) D:0.3<br>K2:(0.05,0.56) D:0.1<br>K3:(0.79,0.06) D:0.0<br>K4:(0.78,0.15) D:0.1<br>K5:(0.04,0.10) D:0.2<br>K6:(0.42,0.24) D:0.2<br>K7:(0.81,0.53) D:0.1<br>K8:(0.68,0.65) D:0.2<br>K9:(0.61,0.98) D:0.1<br>K10:(0.18,0.12) D:0.1<br>K11:(0.43,0.97) D:0.2<br>K12:(0.62,0.78) D:0.2<br>K13:(0.41,0.35) D:0.0<br>K14:(0.28,0.75) D:0.3<br>K15:(0.36,0.62) D:0.1<br>K16:(0.86,0.79) D:0.2<br>K17:(0.31,0.04) D:0.2<br>K18:(0.78,0.32) D:0.3<br>K19:(0.16,0.58) D:0.3<br>K20:(0.48,0.11) D:0.2
+                    </div>
+                </div>
+            </td>
+            <td class="best">10.9681</td>
+            <td>0.1007</td>
+            <td>15.2801</td>
+            <td>0.0297</td>
+            <td>17.1137</td>
+            <td>0.0224</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <div class="map-trigger">
+                    MAP_04
+                    <div class="data-tooltip">
+                        <b>📍 DEPOT:</b> (0.66, 0.06)<br><hr>
+                        <b>👥 CUSTOMERS:</b><br>K1:(0.52,0.16) D:0.2<br>K2:(0.76,0.84) D:0.1<br>K3:(0.07,0.46) D:0.1<br>K4:(0.15,0.36) D:0.3<br>K5:(0.93,0.02) D:0.1<br>K6:(0.97,0.41) D:0.0<br>K7:(0.86,0.88) D:0.1<br>K8:(0.66,0.82) D:0.0<br>K9:(0.48,0.74) D:0.2<br>K10:(0.03,0.70) D:0.3<br>K11:(0.74,0.11) D:0.1<br>K12:(0.15,0.26) D:0.1<br>K13:(0.90,0.66) D:0.2<br>K14:(0.97,0.95) D:0.3<br>K15:(0.86,0.97) D:0.2<br>K16:(0.64,0.49) D:0.2<br>K17:(0.34,0.75) D:0.2<br>K18:(0.08,0.16) D:0.2<br>K19:(0.71,0.51) D:0.3<br>K20:(0.21,0.33) D:0.1
+                    </div>
+                </div>
+            </td>
+            <td class="best">9.4872</td>
+            <td>0.0995</td>
+            <td>16.5922</td>
+            <td>0.0277</td>
+            <td>18.5833</td>
+            <td>0.0246</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <div class="map-trigger">
+                    MAP_05
+                    <div class="data-tooltip">
+                        <b>📍 DEPOT:</b> (0.05, 0.05)<br><hr>
+                        <b>👥 CUSTOMERS:</b><br>K1:(0.47,0.88) D:0.2<br>K2:(0.56,0.80) D:0.1<br>K3:(0.98,0.25) D:0.1<br>K4:(0.15,0.43) D:0.2<br>K5:(0.70,0.89) D:0.1<br>K6:(0.26,0.27) D:0.1<br>K7:(0.14,0.46) D:0.1<br>K8:(0.74,0.04) D:0.1<br>K9:(0.14,0.41) D:0.1<br>K10:(0.53,0.59) D:0.0<br>K11:(0.15,0.30) D:0.2<br>K12:(0.27,0.74) D:0.1<br>K13:(0.91,0.23) D:0.1<br>K14:(0.06,0.21) D:0.2<br>K15:(0.49,0.76) D:0.1<br>K16:(0.49,0.09) D:0.1<br>K17:(0.80,0.75) D:0.2<br>K18:(0.36,0.41) D:0.3<br>K19:(0.03,0.41) D:0.1<br>K20:(0.33,0.32) D:0.3
+                    </div>
+                </div>
+            </td>
+            <td class="best">9.2616</td>
+            <td>0.0923</td>
+            <td>12.7762</td>
+            <td>0.0264</td>
+            <td>14.3093</td>
+            <td>0.0234</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <div class="map-trigger">
+                    MAP_06
+                    <div class="data-tooltip">
+                        <b>📍 DEPOT:</b> (0.48, 0.18)<br><hr>
+                        <b>👥 CUSTOMERS:</b><br>K1:(0.24,0.22) D:0.2<br>K2:(0.92,0.61) D:0.2<br>K3:(0.54,0.70) D:0.3<br>K4:(0.76,0.61) D:0.3<br>K5:(0.06,0.46) D:0.2<br>K6:(0.37,0.77) D:0.1<br>K7:(0.56,0.24) D:0.2<br>K8:(0.35,0.70) D:0.3<br>K9:(0.44,0.74) D:0.2<br>K10:(0.75,0.07) D:0.3<br>K11:(0.33,0.75) D:0.2<br>K12:(0.91,0.30) D:0.2<br>K13:(0.39,0.97) D:0.1<br>K14:(0.79,0.62) D:0.1<br>K15:(0.74,0.49) D:0.2<br>K16:(0.20,0.14) D:0.1<br>K17:(0.33,0.80) D:0.1<br>K18:(0.90,0.84) D:0.2<br>K19:(0.66,0.81) D:0.3<br>K20:(0.82,0.42) D:0.2
+                    </div>
+                </div>
+            </td>
+            <td class="best">9.3241</td>
+            <td>0.0979</td>
+            <td>12.9187</td>
+            <td>0.0291</td>
+            <td>14.4689</td>
+            <td>0.0249</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <div class="map-trigger">
+                    MAP_07
+                    <div class="data-tooltip">
+                        <b>📍 DEPOT:</b> (0.05, 0.28)<br><hr>
+                        <b>👥 CUSTOMERS:</b><br>K1:(0.25,0.93) D:0.1<br>K2:(0.14,0.72) D:0.1<br>K3:(0.25,0.23) D:0.1<br>K4:(0.92,0.68) D:0.1<br>K5:(0.12,0.24) D:0.1<br>K6:(0.02,0.37) D:0.1<br>K7:(0.87,0.90) D:0.3<br>K8:(0.06,0.45) D:0.2<br>K9:(0.43,0.41) D:0.2<br>K10:(0.74,0.75) D:0.1<br>K11:(0.69,0.95) D:0.0<br>K12:(0.21,0.23) D:0.0<br>K13:(0.42,0.86) D:0.2<br>K14:(0.28,0.32) D:0.1<br>K15:(0.66,0.73) D:0.2<br>K16:(0.31,0.83) D:0.3<br>K17:(0.08,0.43) D:0.2<br>K18:(0.20,0.30) D:0.1<br>K19:(0.91,0.80) D:0.1<br>K20:(0.69,0.88) D:0.1
+                    </div>
+                </div>
+            </td>
+            <td class="best">9.1256</td>
+            <td>0.0926</td>
+            <td>13.4838</td>
+            <td>0.0266</td>
+            <td>15.1019</td>
+            <td>0.0231</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <div class="map-trigger">
+                    MAP_08
+                    <div class="data-tooltip">
+                        <b>📍 DEPOT:</b> (0.62, 0.07)<br><hr>
+                        <b>👥 CUSTOMERS:</b><br>K1:(0.39,0.04) D:0.1<br>K2:(0.40,0.14) D:0.1<br>K3:(0.46,0.49) D:0.2<br>K4:(0.59,0.96) D:0.0<br>K5:(0.12,0.40) D:0.1<br>K6:(0.50,1.00) D:0.2<br>K7:(0.60,0.52) D:0.0<br>K8:(0.70,0.25) D:0.2<br>K9:(0.36,0.46) D:0.1<br>K10:(0.71,0.51) D:0.3<br>K11:(0.05,0.25) D:0.2<br>K12:(0.24,0.42) D:0.3<br>K13:(0.00,0.68) D:0.1<br>K14:(0.75,0.25) D:0.2<br>K15:(0.35,0.20) D:0.0<br>K16:(0.28,0.25) D:0.1<br>K17:(0.38,0.77) D:0.0<br>K18:(0.69,0.75) D:0.1<br>K19:(0.12,0.87) D:0.1<br>K20:(0.84,0.05) D:0.2
+                    </div>
+                </div>
+            </td>
+            <td class="best">6.8918</td>
+            <td>0.0909</td>
+            <td>12.8326</td>
+            <td>0.0362</td>
+            <td>14.3725</td>
+            <td>0.0229</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <div class="map-trigger">
+                    MAP_09
+                    <div class="data-tooltip">
+                        <b>📍 DEPOT:</b> (0.99, 0.74)<br><hr>
+                        <b>👥 CUSTOMERS:</b><br>K1:(0.45,0.36) D:0.2<br>K2:(0.89,0.34) D:0.3<br>K3:(0.87,0.23) D:0.2<br>K4:(0.76,0.50) D:0.0<br>K5:(0.03,0.35) D:0.3<br>K6:(0.36,0.50) D:0.1<br>K7:(0.32,0.70) D:0.0<br>K8:(0.04,0.36) D:0.2<br>K9:(0.88,0.52) D:0.2<br>K10:(0.63,0.98) D:0.0<br>K11:(0.85,0.72) D:0.2<br>K12:(0.57,0.56) D:0.2<br>K13:(0.96,0.24) D:0.2<br>K14:(0.02,0.45) D:0.2<br>K15:(0.22,0.17) D:0.2<br>K16:(0.83,0.21) D:0.2<br>K17:(0.80,0.95) D:0.3<br>K18:(0.03,0.15) D:0.3<br>K19:(0.43,0.58) D:0.2<br>K20:(0.19,0.09) D:0.0
+                    </div>
+                </div>
+            </td>
+            <td class="best">10.9141</td>
+            <td>0.1249</td>
+            <td>15.9898</td>
+            <td>0.0292</td>
+            <td>17.9085</td>
+            <td>0.0241</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <div class="map-trigger">
+                    MAP_10
+                    <div class="data-tooltip">
+                        <b>📍 DEPOT:</b> (0.72, 0.78)<br><hr>
+                        <b>👥 CUSTOMERS:</b><br>K1:(0.69,0.44) D:0.1<br>K2:(0.96,0.70) D:0.3<br>K3:(0.32,0.93) D:0.1<br>K4:(0.16,0.61) D:0.2<br>K5:(0.75,0.17) D:0.1<br>K6:(0.80,1.00) D:0.1<br>K7:(0.93,0.31) D:0.0<br>K8:(0.99,0.33) D:0.3<br>K9:(0.41,0.65) D:0.1<br>K10:(0.96,0.82) D:0.1<br>K11:(0.78,0.64) D:0.2<br>K12:(0.83,0.25) D:0.0<br>K13:(0.93,0.76) D:0.3<br>K14:(0.81,0.21) D:0.2<br>K15:(0.34,0.04) D:0.1<br>K16:(0.08,0.33) D:0.2<br>K17:(0.57,0.43) D:0.0<br>K18:(0.32,0.14) D:0.2<br>K19:(0.88,0.62) D:0.2<br>K20:(0.41,0.38) D:0.2
+                    </div>
+                </div>
+            </td>
+            <td class="best">9.5918</td>
+            <td>0.1398</td>
+            <td>10.0921</td>
+            <td>0.0363</td>
+            <td>11.3031</td>
+            <td>0.0247</td>
+        </tr>
+    </tbody></table></div></body></html>

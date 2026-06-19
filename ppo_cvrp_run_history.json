@@ -1,0 +1,51 @@
+[
+  {
+    "timestamp": "2026-04-13 23:29:02",
+    "customers": 15,
+    "routes": 5,
+    "total_demand": 3.43999981880188,
+    "total_distance_km": 6.36457557601191
+  },
+  {
+    "timestamp": "2026-04-13 23:29:19",
+    "customers": 15,
+    "routes": 4,
+    "total_demand": 2.799999713897705,
+    "total_distance_km": 5.894043782282875
+  },
+  {
+    "timestamp": "2026-04-13 23:29:29",
+    "customers": 15,
+    "routes": 5,
+    "total_demand": 3.680000066757202,
+    "total_distance_km": 6.175590835128695
+  },
+  {
+    "timestamp": "2026-04-13 23:29:59",
+    "customers": 15,
+    "routes": 4,
+    "total_demand": 3.359999895095825,
+    "total_distance_km": 6.904102595842225
+  },
+  {
+    "timestamp": "2026-04-20 22:26:21",
+    "customers": 15,
+    "routes": 4,
+    "total_demand": 3.2799997329711914,
+    "total_distance_km": 6.801304678450027
+  },
+  {
+    "timestamp": "2026-04-22 20:40:13",
+    "customers": 15,
+    "routes": 4,
+    "total_demand": 2.6000001430511475,
+    "total_distance_km": 5.9985924516843845
+  },
+  {
+    "timestamp": "2026-04-22 20:40:13",
+    "customers": 15,
+    "routes": 4,
+    "total_demand": 3.0399997234344482,
+    "total_distance_km": 7.226935236404756
+  }
+]
