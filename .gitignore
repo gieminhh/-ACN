@@ -1,6 +1,7 @@
 # Data folder. If needed, add files with git add -f <file>
 # only at the project root (leading /)
 /data
+/ĐACN/
 *.npz
 *.npy
 *.pkl
